@@ -1,0 +1,40 @@
+<section>
+    <h2 class="py-3 text-3xl">Popular catigories</h2>
+    <owl-carousel-o [options]="customOptions">
+  
+      @for (slide of catigoriesData; track slide._id) {
+        <ng-template carouselSlide [id]="slide._id">
+            <img [src]="slide.image" [alt]="slide.name" [title]="slide.name" class="w-full h-[200px] object-contain">
+          </ng-template>
+      }
+       
+      
+  
+    </owl-carousel-o>
+</section>
+
+
+<section class="text-center">
+    <h2 class="py-3 text-3xl">Popular products</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-10 text-start">
+        @for (prod of productsData.slice(0,12); track prod.id) {
+            <div class="card border border-gray-400 rounded-md overflow-hidden shadow">
+                <div  class="img-card">
+                    <img [src]="prod.imageCover" class="w-full h-[250px] object-contain" [alt]="prod.title"/>
+                </div>
+                <div class="card-body p-2">
+                    <h4 class="text-green-500 capitalize">{{prod.category.name}}</h4>
+                    <h3 class="capitalize">{{prod.title.split(' ',2).join(' ')}}</h3>
+                    <div class="flex justify-between">
+                        <p>{{prod.price}}</p>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-star text-yellow-400"></i>
+                            <p>{{prod.ratingsAverage}}</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn bg-green-500 w-full p-2 text-white">Add to cart</button>
+            </div>
+        }
+    </div>
+</section>

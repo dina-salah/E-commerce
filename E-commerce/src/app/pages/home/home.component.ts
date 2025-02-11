@@ -75,4 +75,19 @@ export class HomeComponent implements OnInit {
     nav: true
   }
 
+   
+    slider: OwlOptions = {
+      loop: true,
+
+      mouseDrag: true,
+      touchDrag: false,
+      pullDrag: true,
+      autoplay:true,
+      autoplaySpeed:5000,
+      dots: false,
+      navSpeed: 700,
+      navText: ['', ''],
+      items:1,
+      nav: true
+    }
 }

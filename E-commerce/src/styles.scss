@@ -3,3 +3,6 @@
 @tailwind utilities;
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+.btn-main{
+    @apply disabled:bg-opacity-50 bg-green-600 p-3 transition duration-300 hover:bg-green-800 rounded-sm;
+}
